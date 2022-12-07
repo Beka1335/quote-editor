@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class QuoteTest < ActiveSupport::TestCase
+class CompanyTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

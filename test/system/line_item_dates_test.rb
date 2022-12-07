@@ -1,4 +1,6 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class LineItemDatesTest < ApplicationSystemTestCase
   setup do
@@ -10,41 +12,42 @@ class LineItemDatesTest < ApplicationSystemTestCase
     visit quote_path(@quote)
   end
 
-  test "Creating a new line item date" do
-    assert_selector "h1", text: "First quote"
+  test 'Creating a new line item date' do
+    assert_selector 'h1', text: 'First quote'
 
-    click_on "New date"
-    assert_selector "h1", text: "First quote"
-    fill_in "Date", with: Date.current + 1.day
+    click_on 'New date'
+    assert_selector 'h1', text: 'First quote'
+    fill_in 'Date', with: Date.current + 1.day
 
-    click_on "Create date"
+    click_on 'Create date'
     assert_text I18n.l(Date.current + 1.day, format: :long)
   end
 
-  test "Updating a line item date" do
-    assert_selector "h1", text: "First quote"
+  test 'Updating a line item date' do
+    assert_selector 'h1', text: 'First quote'
 
-    within id: dom_id(@line_item_date) do
-      click_on "Edit"
+    within id: dom_id(@line_item_date, :edit) do
+      click_on 'Edit'
     end
 
-    assert_selector "h1", text: "First quote"
+    assert_selector 'h1', text: 'First quote'
 
-    fill_in "Date", with: Date.current + 1.day
-    click_on "Update date"
+    fill_in 'Date', with: Date.current + 1.day
+    click_on 'Update date'
 
     assert_text I18n.l(Date.current + 1.day, format: :long)
   end
 
-  test "Destroying a line item date" do
+  test 'Destroying a line item date' do
     assert_text I18n.l(Date.current, format: :long)
 
     accept_confirm do
-      within id: dom_id(@line_item_date) do
-        click_on "Delete"
+      within id: dom_id(@line_item_date, :edit) do
+        click_on 'Delete'
       end
     end
 
     assert_no_text I18n.l(Date.current, format: :long)
+    assert_text number_to_currency(@quote.total_price)
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :set_quote, only: %i[show edit update destroy]
   before_action :authenticate_user!, unless: :devise_controller?
 
   def create
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     if @quote.save
       respond_to do |format|
-        format.html { redirect_to quotes_path, notice: "Quote was successfully created." }
+        format.html { redirect_to quotes_path, notice: 'Quote was successfully created.' }
         format.turbo_stream
       end
     else
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def update
     if @quote.update(quote_params)
-      redirect_to quotes_path, notice: "Quote was successfully updated."
+      redirect_to quotes_path, notice: 'Quote was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     @quote.destroy
 
     respond_to do |format|
-      format.html { redirect_to quotes_path, notice: "Quote was successfully destroyed." }
+      format.html { redirect_to quotes_path, notice: 'Quote was successfully destroyed.' }
       format.turbo_stream
     end
   end

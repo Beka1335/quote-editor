@@ -3,6 +3,8 @@
 class LineItemsController < ApplicationController
   before_action :set_quote
   before_action :set_line_item_date
+  before_action :set_line_item, only: [:edit, :update, :destroy]
+
 
   def new
     @line_item = @line_item_date.line_items.build

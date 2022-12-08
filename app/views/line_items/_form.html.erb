@@ -1,4 +1,4 @@
-<%= simple_form_for [quote, line_item_date, line_item],
+<%= simple_form_for [quote, line_item_date, line_item], data: { turbo: false },
                     html: { class: "form line-item line-item--form" } do |f| %>
 
   <%= form_error_notification(line_item) %>

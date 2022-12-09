@@ -4,8 +4,7 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << 'quote-editor-production-31f4.up.railway.app'
-  config.cache_store = :redis_cache_store, { url: "redis://localhost:6379/0" }
+  config.hosts << 'quote-editor-production-63a9.up.railway.app'
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

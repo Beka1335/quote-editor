@@ -4,8 +4,7 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << 'quote-editor-production-31f4.up.railway.app'
-  config.cache_store = :redis_cache_store, { url: "redis://localhost:6379/0" }
+  config.hosts << 'quote-editor-production-63a9.up.railway.app'
   # Code is not reloaded between requests.
   config.cache_classes = true
 

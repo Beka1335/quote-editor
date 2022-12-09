@@ -13,7 +13,6 @@ module QuoteEditor
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.web_console.permissions = ['31.146.224.131', '10.10.10.7', '10.10.10.14']
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

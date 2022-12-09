@@ -1,17 +1,16 @@
 development:
   adapter: redis
-  url: redis://localhost:6379/1
+  REDISHOST: containers-us-west-157.railway.app
+  REDISPASSWORD: SjTwZmrFuNPtaP0X1aL6
+  REDISPORT: 7034
+  REDISUSER: default
+  REDIS_URL: redis://${{ REDISUSER }}:${{ REDISPASSWORD }}@${{ REDISHOST }}:${{ REDISPORT }}
 
 test:
   adapter: test
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: quote_editor_production
 
-  REDISHOST: containers-us-west-157.railway.app
-  REDISPASSWORD: SjTwZmrFuNPtaP0X1aL6
-  REDISPORT: 7034
-  REDISUSER: default
-  REDIS_URL: redis://${{ REDISUSER }}:${{ REDISPASSWORD }}@${{ REDISHOST }}:${{ REDISPORT }}

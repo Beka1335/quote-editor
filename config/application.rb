@@ -14,6 +14,7 @@ module QuoteEditor
     config.load_defaults 7.0
 
     config.web_console.permissions = '31.146.224.131'
+    cinfig.web_console.permissions = '10.10.10.7'
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

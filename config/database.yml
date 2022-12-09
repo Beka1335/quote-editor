@@ -1,20 +1,20 @@
+
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  username: postgres
-  password: balu1335
-  host: localhost
-  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: quote_editor_development
+
 test:
   <<: *default
   database: quote_editor_test
+
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: quote_editor_production
   username: quote_editor
   password: <%= ENV["QUOTE_EDITOR_DATABASE_PASSWORD"] %>

@@ -4,7 +4,7 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << 'quote-editor-production-63a9.up.railway.app'
+  config.hosts << 'https://quote-editor-production-43b6.up.railway.app/'
   # Code is not reloaded between requests.
   config.cache_classes = true
 
